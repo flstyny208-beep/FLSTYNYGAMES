@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101210">
+  <meta name="description" content="FLSTYNY.com وجهتك لشحن جواهر فري فاير وبيع وشراء الحسابات المميزة، بخدمة سريعة وتعامل موثوق.">
+  <title>FLSTYNY.com | متجر فري فاير</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #101210;
+      --panel: #191c19;
+      --paper: #f3f2eb;
+      --muted: #a4aaa2;
+      --red: #f04c43;
+      --green: #83d37b;
+      --line: rgba(243, 242, 235, .15);
+      --font: "Alexandria", Tahoma, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--ink); color: var(--paper); font-family: var(--font); }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+
+    .site-header { position: absolute; z-index: 2; inset: 0 0 auto; border-bottom: 1px solid rgba(255,255,255,.18); }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-size: 19px; font-weight: 800; letter-spacing: 0; }
+    .brand-mark { width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; color: var(--green); font-size: 16px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; color: rgba(255,255,255,.83); font-size: 13px; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta { padding: 11px 17px; border: 1px solid rgba(255,255,255,.72); font-size: 12px; transition: background .2s, color .2s; }
+    .nav-cta:hover { color: var(--ink); background: var(--paper); }
+
+    .hero { min-height: 690px; min-height: min(780px, 94svh); position: relative; display: flex; align-items: end; overflow: hidden; background: #222 url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=2200&q=88") center 44% / cover no-repeat; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: rgba(7, 9, 8, .68); }
+    .hero::after { content: ""; position: absolute; inset: auto 0 0; height: 2px; background: var(--red); }
+    .hero-content { position: relative; z-index: 1; width: 100%; padding-block: 190px 86px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--green); font-size: 12px; font-weight: 600; }
+    .eyebrow::before { content: ""; width: 26px; height: 1px; background: currentColor; }
+    h1 { margin: 18px 0 12px; max-width: 760px; font-size: clamp(54px, 8vw, 104px); line-height: 1.08; font-weight: 800; letter-spacing: 0; }
+    .hero-copy { max-width: 610px; margin: 0; color: rgba(255,255,255,.84); font-size: 17px; line-height: 2; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; padding: 0 22px; border: 1px solid transparent; cursor: pointer; font-size: 13px; font-weight: 700; transition: transform .2s, background .2s, color .2s; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--green); color: #101710; }
+    .button-primary:hover { background: #a3ed9b; }
+    .button-quiet { border-color: rgba(255,255,255,.5); color: white; background: rgba(16,18,16,.22); }
+    .button-quiet:hover { background: white; color: var(--ink); }
+    .hero-note { position: absolute; inset-inline-end: 0; bottom: 94px; writing-mode: vertical-rl; color: rgba(255,255,255,.62); font-size: 10px; letter-spacing: 0; }
+
+    .poster-section { padding-block: 58px 20px; }
+    .poster-frame { width: min(100%, 768px); margin: 0 auto; border: 1px solid var(--line); background: var(--panel); }
+    .poster-frame img { display: block; width: 100%; height: auto; }
+
+    .intro { padding-block: 84px 76px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 70px; align-items: center; }
+    .section-label { margin: 0 0 16px; color: var(--green); font-size: 11px; font-weight: 700; }
+    .intro h2, .section-heading { margin: 0; font-size: clamp(26px, 4vw, 42px); line-height: 1.6; font-weight: 700; }
+    .intro p { margin: 0; color: var(--muted); font-size: 14px; line-height: 2.2; }
+
+    .services { padding-block: 80px 92px; background: var(--paper); color: var(--ink); }
+    .services .section-label { color: #467f43; }
+    .services-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 34px; }
+    .services-head .section-heading { max-width: 520px; }
+    .services-head > p { max-width: 310px; margin: 0 0 8px; color: #61665f; font-size: 13px; line-height: 1.9; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid rgba(16,18,16,.18); }
+    .service { min-height: 270px; padding: 28px 25px 24px; display: flex; flex-direction: column; border-inline-start: 1px solid rgba(16,18,16,.18); }
+    .service:first-child { border-inline-start: 0; }
+    .service-number { color: #6e746d; font-size: 11px; }
+    .service h3 { margin: 32px 0 10px; font-size: 20px; font-weight: 700; }
+    .service p { margin: 0; color: #62675f; font-size: 12px; line-height: 2; }
+    .service button { margin-top: auto; padding: 20px 0 0; display: flex; align-items: center; gap: 8px; align-self: start; border: 0; color: #315d2e; background: none; cursor: pointer; font-size: 12px; font-weight: 700; }
+    .service button span { font-size: 18px; transition: transform .2s; }
+    .service button:hover span { transform: translateX(-4px); }
+
+    .pricing { padding-block: 78px 84px; background: #202420; }
+    .pricing-layout { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 48px; }
+    .pricing .section-label { color: var(--green); }
+    .pricing h2 { max-width: 700px; margin: 0; font-size: clamp(28px, 4vw, 44px); line-height: 1.6; }
+    .pricing-copy { max-width: 650px; margin: 12px 0 0; color: var(--muted); font-size: 13px; line-height: 2; }
+    .pricing-points { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 24px; color: var(--paper); font-size: 12px; }
+    .pricing-points span::before { content: "✓"; margin-inline-end: 8px; color: var(--green); }
+    .pricing .button { white-space: nowrap; }
+    .package-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; margin-top: 38px; }
+    .package-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
+    .package-card img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+    .package-card--offer img { object-fit: contain; background: #101210; }
+    .package-info { padding: 14px; }
+    .package-info h3 { margin: 0; color: var(--paper); font-size: 14px; }
+    .package-info p { margin: 5px 0 12px; color: var(--muted); font-size: 12px; }
+    .package-info .button { width: 100%; min-height: 42px; padding-inline: 10px; font-size: 11px; }
+
+    .promise { padding-block: 78px 84px; }
+    .promise-top { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 36px; }
+    .promise-top > p { max-width: 360px; margin: 0 0 5px; color: var(--muted); font-size: 13px; line-height: 2; }
+    .promise-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+    .promise-item { padding: 24px 18px 0 12px; border-inline-start: 1px solid var(--line); }
+    .promise-item:first-child { border-inline-start: 0; }
+    .promise-item strong { display: block; margin-bottom: 9px; color: var(--green); font-size: 14px; }
+    .promise-item span { color: var(--muted); font-size: 11px; line-height: 1.9; }
+
+    .closing { position: relative; overflow: hidden; padding-block: 62px; background: #202420; }
+    .closing::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 8px; background: var(--red); }
+    .closing-inner { display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+    .closing h2 { margin: 0 0 8px; font-size: clamp(24px, 4vw, 37px); line-height: 1.6; }
+    .closing p { margin: 0; color: var(--muted); font-size: 13px; }
+    footer { padding-block: 25px; color: var(--muted); font-size: 11px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-brand { color: var(--paper); font-weight: 700; }
+    .footer-contact { color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
+
+    dialog { width: min(520px, calc(100% - 28px)); max-height: min(90svh, 720px); padding: 0; border: 1px solid #444a43; color: var(--paper); background: var(--panel); }
+    dialog::backdrop { background: rgba(0,0,0,.76); }
+    .dialog-inner { padding: 28px; }
+    .dialog-head { display: flex; justify-content: space-between; align-items: start; gap: 18px; margin-bottom: 22px; }
+    .dialog-head h2 { margin: 0; font-size: 22px; }
+    .dialog-head p { margin: 7px 0 0; color: var(--muted); font-size: 12px; }
+    .close-button { width: 36px; height: 36px; border: 1px solid var(--line); color: var(--paper); background: transparent; cursor: pointer; font-size: 19px; }
+    .field { display: grid; gap: 7px; margin-bottom: 16px; }
+    .field label { font-size: 12px; font-weight: 600; }
+    .field input, .field select, .field textarea { width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid #454b44; border-radius: 0; color: var(--paper); background: #111411; font-size: 13px; }
+    .field textarea { min-height: 90px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--green); outline-offset: 1px; }
+    .form-note { margin: 0 0 18px; color: var(--muted); font-size: 10px; line-height: 1.8; }
+    .dialog-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .result { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+    .result[hidden] { display: none; }
+    .result p { margin: 0 0 12px; color: var(--green); font-size: 12px; }
+    .result textarea { width: 100%; min-height: 130px; padding: 12px; border: 1px solid #454b44; color: var(--paper); background: #111411; font-size: 12px; line-height: 1.8; }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 36px, 560px); }
+      .nav { min-height: 70px; }
+      .nav-links { gap: 15px; font-size: 11px; }
+      .nav-links a:nth-child(3) { display: none; }
+      .nav-cta { display: none; }
+      .hero { min-height: 650px; min-height: 88svh; background-position: 54% center; }
+      .hero-content { padding-block: 160px 78px; }
+      h1 { font-size: clamp(52px, 15vw, 78px); }
+      .hero-copy { max-width: 470px; font-size: 14px; }
+      .hero-note { display: none; }
+      .poster-section { padding-top: 36px; }
+      .intro { padding-block: 60px; grid-template-columns: 1fr; gap: 16px; }
+      .intro h2, .section-heading { font-size: 28px; }
+      .services { padding-block: 62px; }
+      .services-head, .promise-top { align-items: start; flex-direction: column; gap: 12px; }
+      .services-head > p, .promise-top > p { max-width: 480px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service { min-height: 220px; padding: 23px 4px; border-inline-start: 0; border-bottom: 1px solid rgba(16,18,16,.18); }
+      .service:last-child { border-bottom: 0; }
+      .service h3 { margin-top: 20px; }
+      .pricing { padding-block: 60px; }
+      .pricing-layout { grid-template-columns: 1fr; gap: 26px; }
+      .pricing .button { justify-self: start; }
+      .package-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 28px; }
+      .package-info { padding: 12px; }
+      .package-info h3 { font-size: 12px; }
+      .package-info p { font-size: 11px; }
+      .promise { padding-block: 60px; }
+      .promise-grid { grid-template-columns: repeat(2, 1fr); }
+      .promise-item { min-height: 112px; padding: 18px 12px 12px 8px; border-bottom: 1px solid var(--line); }
+      .promise-item:nth-child(odd) { border-inline-start: 0; }
+      .promise-item:nth-last-child(-n+2) { border-bottom: 0; }
+      .closing-inner { align-items: start; flex-direction: column; }
+      .footer-inner { align-items: start; flex-direction: column; gap: 8px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="التنقل الرئيسي">
+      <a class="brand" href="#home" aria-label="FLSTYNY.com الرئيسية"><span class="brand-mark">ف</span><span>FLSTYNY.com 🇵🇸</span></a>
+      <div class="nav-links">
+        <a href="#services">خدماتنا</a>
+        <a href="#gems-prices">أسعار الجواهر</a>
+        <a href="#about">عن المتجر</a>
+        <a href="#trust">لماذا نحن</a>
+      </div>
+      <a class="nav-cta" href="#services">اكتشف الخدمات <span aria-hidden="true">←</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-content wrap">
+        <div class="eyebrow">متجرك لعالم فري فاير</div>
+        <h1 id="hero-title">FLSTYNY.com <span aria-label="فلسطين">🇵🇸</span></h1>
+        <p class="hero-copy">حيث تبدأ المتعة ويصبح التميز أسلوباً. شحن جواهر فري فاير وبيع وشراء حسابات مميزة، بخدمة نهتم فيها بكل طلب.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#services">تعرّف على خدماتنا <span aria-hidden="true">←</span></a>
+          <button class="button button-quiet" type="button" data-order="عام">جهّز طلبك</button>
+        </div>
+        <span class="hero-note">متعة اللعب تبدأ من هنا</span>
+      </div>
+    </section>
+
+    <section class="poster-section wrap" aria-label="ملصق متجر FLSTYNY الترويجي">
+      <figure class="poster-frame">
+        <img src="flstyny-poster.png" alt="ملصق FLSTYNY لفري فاير، يعرض خدمات شحن الجواهر وبيع وشراء الحسابات مع الهوية الفلسطينية" width="768" height="768" loading="lazy" decoding="async">
+      </figure>
+    </section>
+
+    <section class="intro wrap" id="about">
+      <div>
+        <p class="section-label">أهلاً وسهلاً بكم</p>
+        <h2>مش مجرد متجر…<br>نحن عنوان التميز في عالم فري فاير.</h2>
+      </div>
+      <p>نحن وجهتك لعالم Free Fire. نقدم لكم تجربة مميزة في شحن الجواهر وبيع وشراء الحسابات، مع الاهتمام بالمصداقية والجودة وسرعة الخدمة. هدفنا كسب ثقتكم وتقديم الأفضل دائماً، ورضاكم هو نجاحنا. ❤️</p>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="services-head">
+          <div>
+            <p class="section-label">اختاروا اللي يناسبكم</p>
+            <h2 class="section-heading">خدمات المتجر</h2>
+          </div>
+          <p>من الجواهر إلى الحسابات المميزة، نساعدك تختار الخدمة المناسبة لاحتياجك.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service">
+            <span class="service-number">01 / الجواهر</span>
+            <h3>شحن جواهر فري فاير</h3>
+            <p>اطلب الجواهر التي تناسبك، ونرتب تفاصيل طلبك بكل وضوح.</p>
+            <button type="button" data-order="شحن جواهر فري فاير">جهّز طلب الشحن <span aria-hidden="true">←</span></button>
+          </article>
+          <article class="service">
+            <span class="service-number">02 / الحسابات</span>
+            <h3>بيع وشراء حسابات</h3>
+            <p>حسابات مميزة وخيارات متنوعة. تواصل معنا لتحديد التفاصيل المتاحة.</p>
+            <button type="button" data-order="بيع أو شراء حساب">استفسر عن الحسابات <span aria-hidden="true">←</span></button>
+          </article>
+          <article class="service">
+            <span class="service-number">03 / العروض</span>
+            <h3>عروض وأسعار منافسة</h3>
+            <p>اسأل عن العروض الحالية، واختر الأنسب قبل تأكيد طلبك.</p>
+            <button type="button" data-order="استفسار عن عرض">اسأل عن العروض <span aria-hidden="true">←</span></button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="gems-prices" aria-labelledby="pricing-title">
+      <div class="wrap">
+        <div class="pricing-layout">
+          <div>
+            <p class="section-label">لللاعبين في الأردن 🇯🇴</p>
+            <h2 id="pricing-title">أفضل أسعار جواهر فري فاير في الأردن</h2>
+            <p class="pricing-copy">نوفّر خيارات شحن تناسب احتياجك وميزانيتك. اسألنا عن سعر باقتك الحالي بالدينار الأردني، وتأكد من السعر قبل إتمام الطلب.</p>
+            <div class="pricing-points">
+              <span>أسعار منافسة</span>
+              <span>خيارات متنوعة</span>
+              <span>تأكيد السعر قبل الشحن</span>
+            </div>
+          </div>
+          <button class="button button-primary" type="button" data-order="استفسار عن أسعار الجواهر">اعرف سعر باقتك <span aria-hidden="true">←</span></button>
+        </div>
+        <div class="package-grid" aria-label="باقات جواهر فري فاير">
+          <article class="package-card">
+            <img src="WhatsApp%20Image%202026-11-05%20at%207.50.40%20AM%20(1).jpeg" alt="باقة 100 جوهرة مع 10 جواهر إضافية بدينار واحد" width="1234" height="1234" loading="lazy" decoding="async">
+            <div class="package-info">
+              <h3>100 جوهرة</h3>
+              <p>1 دينار أردني</p>
+              <button class="button button-primary" type="button" data-order="شحن جواهر فري فاير" data-details="باقة 100 جوهرة بسعر 1 دينار أردني">اطلب هذه الباقة</button>
+            </div>
+          </article>
+          <article class="package-card">
+            <img src="WhatsApp%20Image%202026-11-05%20at%207.50.40%20AM%20(4).jpeg" alt="باقة 210 جواهر مع 21 جوهرة إضافية بدينار و75 قرشًا" width="1234" height="1234" loading="lazy" decoding="async">
+            <div class="package-info">
+              <h3>210 جوهرة</h3>
+              <p>1.75 دينار أردني</p>
+              <button class="button button-primary" type="button" data-order="شحن جواهر فري فاير" data-details="باقة 210 جوهرة بسعر 1.75 دينار أردني">اطلب هذه الباقة</button>
+            </div>
+          </article>
+          <article class="package-card package-card--offer">
+            <img src="free-fire-offer-3-jod.png" alt="عرض شحن جواهر فري فاير بسعر 3 دنانير أردنية" width="1154" height="768" loading="lazy" decoding="async">
+            <div class="package-info">
+              <h3>عرض خاص</h3>
+              <p>3 دنانير أردنية</p>
+              <button class="button button-primary" type="button" data-order="شحن جواهر فري فاير" data-details="عرض شحن جواهر فري فاير بسعر 3 دنانير أردنية">اطلب هذا العرض</button>
+            </div>
+          </article>
+          <article class="package-card">
+            <img src="WhatsApp%20Image%202026-11-05%20at%207.50.40%20AM.jpeg" alt="باقة 530 جوهرة مع 53 جوهرة إضافية بأربعة دنانير" width="1234" height="1234" loading="lazy" decoding="async">
+            <div class="package-info">
+              <h3>530 جوهرة</h3>
+              <p>4 دنانير أردنية</p>
+              <button class="button button-primary" type="button" data-order="شحن جواهر فري فاير" data-details="باقة 530 جوهرة بسعر 4 دنانير أردنية">اطلب هذه الباقة</button>
+            </div>
+          </article>
+          <article class="package-card">
+            <img src="WhatsApp%20Image%202026-11-05%20at%207.50.40%20AM%20(2).jpeg" alt="باقة 1080 جوهرة مع 108 جواهر إضافية بثمانية دنانير" width="1234" height="1234" loading="lazy" decoding="async">
+            <div class="package-info">
+              <h3>1080 جوهرة</h3>
+              <p>8 دنانير أردنية</p>
+              <button class="button button-primary" type="button" data-order="شحن جواهر فري فاير" data-details="باقة 1080 جوهرة بسعر 8 دنانير أردنية">اطلب هذه الباقة</button>
+            </div>
+          </article>
+          <article class="package-card">
+            <img src="WhatsApp%20Image%202026-11-05%20at%207.50.40%20AM%20(3).jpeg" alt="باقة 2200 جوهرة مع 220 جوهرة إضافية بخمسة عشر دينارًا" width="1234" height="1234" loading="lazy" decoding="async">
+            <div class="package-info">
+              <h3>2200 جوهرة</h3>
+              <p>15 دينارًا أردنيًا</p>
+              <button class="button button-primary" type="button" data-order="شحن جواهر فري فاير" data-details="باقة 2200 جوهرة بسعر 15 دينارًا أردنيًا">اطلب هذه الباقة</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="promise wrap" id="trust">
+      <div class="promise-top">
+        <div>
+          <p class="section-label">تجربة تليق بكم</p>
+          <h2 class="section-heading">ثقتكم أولويتنا.</h2>
+        </div>
+        <p>نهتم أن تكون تجربتكم واضحة ومريحة من أول استفسار إلى تنفيذ الطلب.</p>
+      </div>
+      <div class="promise-grid">
+        <div class="promise-item"><strong>💎 جودة واهتمام</strong><span>نحرص على تقديم خدمة تليق بتوقعاتكم.</span></div>
+        <div class="promise-item"><strong>⚡ سرعة في التنفيذ</strong><span>نتابع الطلبات ونعمل على تنفيذها بسرعة.</span></div>
+        <div class="promise-item"><strong>🔥 أسعار منافسة</strong><span>عروض وخيارات تناسب احتياجاتكم.</span></div>
+        <div class="promise-item"><strong>🤝 تعامل موثوق</strong><span>مصداقية واهتمام في كل خطوة.</span></div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="closing-inner wrap">
+        <div>
+          <h2>جاهز تعيش التجربة؟</h2>
+          <p>اختار خدمتك وجهّز تفاصيل طلبك بكل سهولة.</p>
+        </div>
+        <button class="button button-primary" type="button" data-order="عام">ابدأ طلبك <span aria-hidden="true">←</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner wrap">
+      <span class="footer-brand">FLSTYNY.com 🇵🇸</span>
+      <a class="footer-contact" href="https://wa.me/962789695320" target="_blank" rel="noopener noreferrer" dir="ltr">واتساب: +962 0789695320</a>
+      <a class="footer-contact" href="https://chat.whatsapp.com/EaiydtpSjTgBtqjoaoQEKq" target="_blank" rel="noopener noreferrer">انضم لمجموعة واتساب</a>
+      <span>© <span id="year"></span> FLSTYNY.com</span>
+    </div>
+  </footer>
+
+  <dialog id="order-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-inner">
+      <div class="dialog-head">
+        <div><h2 id="dialog-title">جهّز تفاصيل طلبك</h2><p>عبّي التفاصيل، وبنجهز لك رسالة واضحة للمتجر.</p></div>
+        <button class="close-button" type="button" aria-label="إغلاق نافذة الطلب">×</button>
+      </div>
+      <form id="order-form">
+        <div class="field">
+          <label for="service-type">الخدمة</label>
+          <select id="service-type" name="service" required>
+            <option value="شحن جواهر فري فاير">شحن جواهر فري فاير</option>
+            <option value="استفسار عن أسعار الجواهر">استفسار عن أسعار الجواهر</option>
+            <option value="بيع أو شراء حساب">بيع أو شراء حساب</option>
+            <option value="استفسار عن عرض">استفسار عن عرض</option>
+            <option value="عام">استفسار عام</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="customer-name">اسمك</label>
+          <input id="customer-name" name="name" autocomplete="name" required maxlength="60" placeholder="اكتب اسمك">
+        </div>
+        <div class="field">
+          <label for="request-details">تفاصيل الطلب</label>
+          <textarea id="request-details" name="details" required maxlength="500" placeholder="مثال: عدد الجواهر أو تفاصيل الحساب المطلوب"></textarea>
+        </div>
+        <p class="form-note">لا تكتب كلمة المرور أو أي معلومات سرية هنا. لن تُرسل بياناتك تلقائياً؛ راجع الرسالة قبل إرسالها عبر واتساب.</p>
+        <div class="dialog-actions">
+          <button class="button button-primary" type="submit">جهّز رسالة الطلب</button>
+          <button class="button button-quiet close-button-secondary" type="button">إلغاء</button>
+        </div>
+      </form>
+      <div class="result" id="order-result" hidden aria-live="polite">
+        <p>رسالتك جاهزة. أرسلها إلينا عبر واتساب أو انسخها.</p>
+        <textarea id="order-message" readonly aria-label="رسالة الطلب الجاهزة"></textarea>
+        <div class="dialog-actions" style="margin-top: 12px"><a class="button button-primary" id="send-order" href="https://wa.me/962789695320" target="_blank" rel="noopener noreferrer">أرسل عبر واتساب</a><button class="button button-quiet" id="copy-order" type="button">انسخ الرسالة</button></div>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    const orderDialog = document.querySelector("#order-dialog");
+    const orderForm = document.querySelector("#order-form");
+    const serviceSelect = document.querySelector("#service-type");
+    const requestDetails = document.querySelector("#request-details");
+    const orderResult = document.querySelector("#order-result");
+    const orderMessage = document.querySelector("#order-message");
+
+    document.querySelectorAll("[data-order]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const requestedService = button.dataset.order;
+        const matchingOption = [...serviceSelect.options].find((option) => option.value === requestedService);
+        serviceSelect.value = matchingOption ? requestedService : "عام";
+        requestDetails.value = button.dataset.details || "";
+        orderResult.hidden = true;
+        orderDialog.showModal();
+      });
+    });
+
+    document.querySelectorAll(".close-button, .close-button-secondary").forEach((button) => {
+      button.addEventListener("click", () => orderDialog.close());
+    });
+
+    orderDialog.addEventListener("click", (event) => {
+      if (event.target === orderDialog) orderDialog.close();
+    });
+
+    orderForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!orderForm.reportValidity()) return;
+      const formData = new FormData(orderForm);
+      orderMessage.value = [
+        "مرحباً FLSTYNY.com 🇵🇸، أود الاستفسار عن طلبي:",
+        `الخدمة: ${formData.get("service")}`,
+        `الاسم: ${formData.get("name")}`,
+        `التفاصيل: ${formData.get("details")}`
+      ].join("\n");
+      document.querySelector("#send-order").href = `https://wa.me/962789695320?text=${encodeURIComponent(orderMessage.value)}`;
+      orderResult.hidden = false;
+      document.querySelector("#copy-order").focus();
+    });
+
+    document.querySelector("#copy-order").addEventListener("click", async (event) => {
+      try {
+        await navigator.clipboard.writeText(orderMessage.value);
+        event.currentTarget.textContent = "تم النسخ ✓";
+      } catch {
+        orderMessage.focus();
+        orderMessage.select();
+        event.currentTarget.textContent = "حدّد الرسالة لنسخها";
+      }
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
